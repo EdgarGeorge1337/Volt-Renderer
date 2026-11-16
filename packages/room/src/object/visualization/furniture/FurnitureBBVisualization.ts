@@ -14,6 +14,8 @@ export class FurnitureBBVisualization extends FurnitureBrandedImageVisualization
 
     protected getLayerZOffset(scale: number, direction: number, layerId: number): number
     {
-        return super.getLayerZOffset(scale, direction, layerId) + this._offsetZ;
+        const offset = super.getLayerZOffset(scale, direction, layerId) + this._offsetZ;
+
+        return this.isBrandedImageLayer(scale, layerId) ? offset + this._offsetZ : offset;
     }
 }

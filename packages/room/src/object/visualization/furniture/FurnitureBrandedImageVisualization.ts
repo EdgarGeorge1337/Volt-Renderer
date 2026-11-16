@@ -216,7 +216,7 @@ export class FurnitureBrandedImageVisualization extends FurnitureVisualization
         return super.getSpriteAssetName(scale, layerId);
     }
 
-    private isBrandedImageLayer(scale: number, layerId: number): boolean
+    protected isBrandedImageLayer(scale: number, layerId: number): boolean
     {
         return this.getLayerTag(scale, this._direction, layerId) === FurnitureBrandedImageVisualization.BRANDED_IMAGE;
     }
@@ -235,14 +235,6 @@ export class FurnitureBrandedImageVisualization extends FurnitureVisualization
         const offset = super.getLayerYOffset(scale, direction, layerId);
 
         return this.isBrandedImageLayer(scale, layerId) ? offset + ((this._offsetY || 0) * (scale / 64)) : offset;
-    }
-
-    // offsetZ is the z-index / depth (overlap order, like CSS z-index).
-    protected getLayerZOffset(scale: number, direction: number, layerId: number): number
-    {
-        const offset = super.getLayerZOffset(scale, direction, layerId);
-
-        return this.isBrandedImageLayer(scale, layerId) ? offset + (this._offsetZ || 0) : offset;
     }
 
     // `scale` zooms the branded image (percent, 100 = 1x). Applied via the
