@@ -189,6 +189,17 @@ export class UserDataManager implements IUserDataManager
         this.invalidateRoomUserListSnapshot();
     }
 
+    public updateBadgesRank(roomIndex: number, rank: number): void
+    {
+        const userData = this.getUserDataByIndex(roomIndex);
+
+        if(!userData) return;
+
+        userData.badgesRank = rank;
+
+        this.invalidateRoomUserListSnapshot();
+    }
+
     public updatePetLevel(roomIndex: number, level: number): void
     {
         const userData = this.getUserDataByIndex(roomIndex);
