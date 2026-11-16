@@ -15,8 +15,8 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
         if(!texture) return;
 
-        // AIR FurnitureRoomBackgroundVisualization: offsets for the full image and for its size 32 half.
-        this._imageOffsets = new Map([ [ 1, this.createImageOffset(texture.width, texture.height) ], [ 0.5, this.createImageOffset((texture.width / 2), (texture.height / 2)) ] ]);
+        // AIR FurnitureRoomBackgroundVisualization: offsets for the full image at size 64 and its half at size 32.
+        this._imageOffsets = new Map([ [ 64, this.createImageOffset(texture.width, texture.height) ], [ 32, this.createImageOffset((texture.width / 2), (texture.height / 2)) ] ]);
     }
 
     private createImageOffset(width: number, height: number): DirectionalOffsetData
@@ -49,7 +49,7 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
     protected getLayerXOffset(scale: number, direction: number, layerId: number): number
     {
-        const offset = this._imageOffsets?.get(this.getImageFactor(scale))?.getXOffset(direction, 0);
+        const offset = this._imageOffsets?.get(this.getValidSize(scale))?.getXOffset(direction, 0);
 
         if(offset !== undefined) return offset + this.getScaledOffset(this._offsetX, scale);
 
@@ -58,7 +58,7 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
     protected getLayerYOffset(scale: number, direction: number, layerId: number): number
     {
-        const offset = this._imageOffsets?.get(this.getImageFactor(scale))?.getYOffset(direction, 0);
+        const offset = this._imageOffsets?.get(this.getValidSize(scale))?.getYOffset(direction, 0);
 
         if(offset !== undefined) return offset + this.getScaledOffset(this._offsetY, scale);
 
