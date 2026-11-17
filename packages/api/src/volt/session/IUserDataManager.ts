@@ -17,6 +17,7 @@ export interface IUserDataManager
     updateName(roomIndex: number, name: string): void;
     updateMotto(roomIndex: number, custom: string): void;
     updateAchievementScore(roomIndex: number, score: number): void;
+    updateBadgesRank(roomIndex: number, rank: number): void;
     updatePetLevel(roomIndex: number, level: number): void;
     updatePetBreedingStatus(roomIndex: number, canBreed: boolean, canHarvest: boolean, canRevive: boolean, hasBreedingPermission: boolean): void;
     requestPetInfo(id: number): void;

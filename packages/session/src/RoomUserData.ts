@@ -9,6 +9,7 @@ export class RoomUserData implements IRoomUserData
     private _figure: string = '';
     private _custom: string = '';
     private _activityPoints: number;
+    private _badgesRank: number = -1;
     private _webID: number = 0;
     private _groupID: number = 0;
     private _groupStatus: number = 0;
@@ -46,6 +47,16 @@ export class RoomUserData implements IRoomUserData
     public set activityPoints(value: number)
     {
         this._activityPoints = value;
+    }
+
+    public get badgesRank(): number
+    {
+        return this._badgesRank;
+    }
+
+    public set badgesRank(value: number)
+    {
+        this._badgesRank = value;
     }
 
     public get name(): string

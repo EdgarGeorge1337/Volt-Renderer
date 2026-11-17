@@ -56,6 +56,7 @@ export class RoomUsersHandler extends BaseHandler
                 userData.name = user.name;
                 userData.custom = user.custom;
                 userData.activityPoints = user.activityPoints;
+                userData.badgesRank = user.badgesRank;
                 userData.figure = user.figure;
                 userData.type = user.userType;
                 userData.webID = user.webID;
@@ -102,8 +103,9 @@ export class RoomUsersHandler extends BaseHandler
         session.userDataManager.updateFigure(parser.unitId, parser.figure, parser.gender, false, false);
         session.userDataManager.updateMotto(parser.unitId, parser.motto);
         session.userDataManager.updateAchievementScore(parser.unitId, parser.achievementScore);
+        session.userDataManager.updateBadgesRank(parser.unitId, parser.badgesRank);
 
-        GetEventDispatcher().dispatchEvent(new RoomSessionUserFigureUpdateEvent(session, parser.unitId, parser.figure, parser.gender, parser.motto, parser.achievementScore));
+        GetEventDispatcher().dispatchEvent(new RoomSessionUserFigureUpdateEvent(session, parser.unitId, parser.figure, parser.gender, parser.motto, parser.achievementScore, parser.badgesRank));
     }
 
     private onRoomUnitRemoveEvent(event: RoomUnitRemoveEvent): void
