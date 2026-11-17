@@ -6,10 +6,6 @@ export const HabboAvatarPartSets = {
                 'flippedSetType': 'ri'
             },
             {
-                'setType': 'ri',
-                'flippedSetType': 'ri'
-            },
-            {
                 'setType': 'rh',
                 'flippedSetType': 'lh'
             },
@@ -19,12 +15,19 @@ export const HabboAvatarPartSets = {
             },
             {
                 'setType': 'rs',
-                'swim': '0',
                 'flippedSetType': 'ls'
             },
             {
                 'setType': 'rc',
                 'flippedSetType': 'lc'
+            },
+            {
+                'setType': 'mcr',
+                'flippedSetType': 'mcl'
+            },
+            {
+                'setType': 'ptr',
+                'flippedSetType': 'ptl'
             },
             {
                 'setType': 'bd'
@@ -49,6 +52,18 @@ export const HabboAvatarPartSets = {
             },
             {
                 'setType': 'cc'
+            },
+            {
+                'setType': 'pt'
+            },
+            {
+                'setType': 'mc'
+            },
+            {
+                'setType': 'mco'
+            },
+            {
+                'setType': 'mcu'
             },
             {
                 'setType': 'hd'
@@ -87,6 +102,14 @@ export const HabboAvatarPartSets = {
                 'flippedSetType': 'rc'
             },
             {
+                'setType': 'mcl',
+                'flippedSetType': 'mcr'
+            },
+            {
+                'setType': 'ptl',
+                'flippedSetType': 'ptr'
+            },
+            {
                 'setType': 'wa'
             },
             {
@@ -103,37 +126,12 @@ export const HabboAvatarPartSets = {
             },
             {
                 'setType': 'he'
-            },
-            {
-                'setType': 'pt'
-            },
-            {
-                'setType': 'ptl',
-                'flippedSetType': 'ptr'
-            },
-            {
-                'setType': 'ptr',
-                'flippedSetType': 'ptl'
-            },
-            {
-                'setType': 'mc'
-            },
-            {
-                'setType': 'mcl',
-                'flippedSetType': 'mcr'
-            },
-            {
-                'setType': 'mcr',
-                'flippedSetType': 'mcl'
             }
         ],
         'activePartSets': [
             {
                 'id': 'figure',
                 'activeParts': [
-                    {
-                        'setType': 'rh'
-                    },
                     {
                         'setType': 'rh'
                     },
@@ -145,6 +143,12 @@ export const HabboAvatarPartSets = {
                     },
                     {
                         'setType': 'rc'
+                    },
+                    {
+                        'setType': 'mcr'
+                    },
+                    {
+                        'setType': 'ptr'
                     },
                     {
                         'setType': 'bd'
@@ -169,6 +173,18 @@ export const HabboAvatarPartSets = {
                     },
                     {
                         'setType': 'cc'
+                    },
+                    {
+                        'setType': 'pt'
+                    },
+                    {
+                        'setType': 'mc'
+                    },
+                    {
+                        'setType': 'mco'
+                    },
+                    {
+                        'setType': 'mcu'
                     },
                     {
                         'setType': 'wa'
@@ -201,6 +217,12 @@ export const HabboAvatarPartSets = {
                         'setType': 'lc'
                     },
                     {
+                        'setType': 'mcl'
+                    },
+                    {
+                        'setType': 'ptl'
+                    },
+                    {
                         'setType': 'ea'
                     },
                     {
@@ -214,24 +236,6 @@ export const HabboAvatarPartSets = {
                     },
                     {
                         'setType': 'he'
-                    },
-                    {
-                        'setType': 'pt'
-                    },
-                    {
-                        'setType': 'ptl'
-                    },
-                    {
-                        'setType': 'ptr'
-                    },
-                    {
-                        'setType': 'mc'
-                    },
-                    {
-                        'setType': 'mcl'
-                    },
-                    {
-                        'setType': 'mcr'
                     }
                 ]
             },
@@ -325,6 +329,9 @@ export const HabboAvatarPartSets = {
                         'setType': 'rc'
                     },
                     {
+                        'setType': 'mcr'
+                    },
+                    {
                         'setType': 'ri'
                     }
                 ]
@@ -343,6 +350,9 @@ export const HabboAvatarPartSets = {
                     },
                     {
                         'setType': 'rc'
+                    },
+                    {
+                        'setType': 'mcr'
                     },
                     {
                         'setType': 'ri'
@@ -374,7 +384,44 @@ export const HabboAvatarPartSets = {
                         'setType': 'lc'
                     },
                     {
+                        'setType': 'mcl'
+                    },
+                    {
                         'setType': 'li'
+                    }
+                ]
+            },
+            {
+                'id': 'pet',
+                'activeParts': [
+                    {
+                        'setType': 'pt'
+                    },
+                    {
+                        'setType': 'ptr'
+                    },
+                    {
+                        'setType': 'ptl'
+                    }
+                ]
+            },
+            {
+                'id': 'misc',
+                'activeParts': [
+                    {
+                        'setType': 'mc'
+                    },
+                    {
+                        'setType': 'mcr'
+                    },
+                    {
+                        'setType': 'mcl'
+                    },
+                    {
+                        'setType': 'mco'
+                    },
+                    {
+                        'setType': 'mcu'
                     }
                 ]
             },
@@ -412,13 +459,61 @@ export const HabboAvatarPartSets = {
                         'setType': 'lc'
                     },
                     {
+                        'setType': 'mcl'
+                    },
+                    {
+                        'setType': 'ptl'
+                    },
+                    {
                         'setType': 'rs'
                     },
                     {
                         'setType': 'rc'
                     },
                     {
+                        'setType': 'mcr'
+                    },
+                    {
+                        'setType': 'ptr'
+                    },
+                    {
                         'setType': 'sh'
+                    },
+                    {
+                        'setType': 'cc'
+                    },
+                    {
+                        'setType': 'pt'
+                    },
+                    {
+                        'setType': 'ha'
+                    },
+                    {
+                        'setType': 'he'
+                    },
+                    {
+                        'setType': 'ca'
+                    },
+                    {
+                        'setType': 'wa'
+                    },
+                    {
+                        'setType': 'hr'
+                    },
+                    {
+                        'setType': 'ea'
+                    },
+                    {
+                        'setType': 'fa'
+                    },
+                    {
+                        'setType': 'mc'
+                    },
+                    {
+                        'setType': 'mco'
+                    },
+                    {
+                        'setType': 'mcu'
                     }
                 ]
             },
@@ -442,6 +537,24 @@ export const HabboAvatarPartSets = {
                     },
                     {
                         'setType': 'cc'
+                    },
+                    {
+                        'setType': 'pt'
+                    },
+                    {
+                        'setType': 'ptr'
+                    },
+                    {
+                        'setType': 'ptl'
+                    },
+                    {
+                        'setType': 'mc'
+                    },
+                    {
+                        'setType': 'mco'
+                    },
+                    {
+                        'setType': 'mcu'
                     }
                 ]
             },

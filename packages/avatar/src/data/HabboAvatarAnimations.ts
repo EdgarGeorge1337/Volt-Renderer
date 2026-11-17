@@ -312,58 +312,6 @@ export const HabboAvatarAnimations = {
             'id': 'Sit',
             'parts': [
                 {
-                    'setType': 'bd',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'sit' },
-                        { 'number': 1, 'assetPartDefinition': 'sit' },
-                        { 'number': 2, 'assetPartDefinition': 'sit' },
-                        { 'number': 3, 'assetPartDefinition': 'sit' },
-                        { 'number': 4, 'assetPartDefinition': 'sit' },
-                        { 'number': 5, 'assetPartDefinition': 'sit' },
-                        { 'number': 6, 'assetPartDefinition': 'sit' },
-                        { 'number': 7, 'assetPartDefinition': 'sit' }
-                    ]
-                },
-                {
-                    'setType': 'bds',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'sit' },
-                        { 'number': 1, 'assetPartDefinition': 'sit' },
-                        { 'number': 2, 'assetPartDefinition': 'sit' },
-                        { 'number': 3, 'assetPartDefinition': 'sit' },
-                        { 'number': 4, 'assetPartDefinition': 'sit' },
-                        { 'number': 5, 'assetPartDefinition': 'sit' },
-                        { 'number': 6, 'assetPartDefinition': 'sit' },
-                        { 'number': 7, 'assetPartDefinition': 'sit' }
-                    ]
-                },
-                {
-                    'setType': 'lg',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'sit' },
-                        { 'number': 1, 'assetPartDefinition': 'sit' },
-                        { 'number': 2, 'assetPartDefinition': 'sit' },
-                        { 'number': 3, 'assetPartDefinition': 'sit' },
-                        { 'number': 4, 'assetPartDefinition': 'sit' },
-                        { 'number': 5, 'assetPartDefinition': 'sit' },
-                        { 'number': 6, 'assetPartDefinition': 'sit' },
-                        { 'number': 7, 'assetPartDefinition': 'sit' }
-                    ]
-                },
-                {
-                    'setType': 'sh',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'sit' },
-                        { 'number': 1, 'assetPartDefinition': 'sit' },
-                        { 'number': 2, 'assetPartDefinition': 'sit' },
-                        { 'number': 3, 'assetPartDefinition': 'sit' },
-                        { 'number': 4, 'assetPartDefinition': 'sit' },
-                        { 'number': 5, 'assetPartDefinition': 'sit' },
-                        { 'number': 6, 'assetPartDefinition': 'sit' },
-                        { 'number': 7, 'assetPartDefinition': 'sit' }
-                    ]
-                },
-                {
                     'setType': 'ch',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'sit' },
@@ -390,7 +338,7 @@ export const HabboAvatarAnimations = {
                     ]
                 },
                 {
-                    'setType': 'lc',
+                    'setType': 'mc',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'sit' },
                         { 'number': 1, 'assetPartDefinition': 'sit' },
@@ -403,7 +351,72 @@ export const HabboAvatarAnimations = {
                     ]
                 },
                 {
-                    'setType': 'rc',
+                    'setType': 'mco',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'sit' },
+                        { 'number': 1, 'assetPartDefinition': 'sit' },
+                        { 'number': 2, 'assetPartDefinition': 'sit' },
+                        { 'number': 3, 'assetPartDefinition': 'sit' },
+                        { 'number': 4, 'assetPartDefinition': 'sit' },
+                        { 'number': 5, 'assetPartDefinition': 'sit' },
+                        { 'number': 6, 'assetPartDefinition': 'sit' },
+                        { 'number': 7, 'assetPartDefinition': 'sit' }
+                    ]
+                },
+                {
+                    'setType': 'mcu',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'sit' },
+                        { 'number': 1, 'assetPartDefinition': 'sit' },
+                        { 'number': 2, 'assetPartDefinition': 'sit' },
+                        { 'number': 3, 'assetPartDefinition': 'sit' },
+                        { 'number': 4, 'assetPartDefinition': 'sit' },
+                        { 'number': 5, 'assetPartDefinition': 'sit' },
+                        { 'number': 6, 'assetPartDefinition': 'sit' },
+                        { 'number': 7, 'assetPartDefinition': 'sit' }
+                    ]
+                },
+                {
+                    'setType': 'ls',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'sit' },
+                        { 'number': 1, 'assetPartDefinition': 'sit' },
+                        { 'number': 2, 'assetPartDefinition': 'sit' },
+                        { 'number': 3, 'assetPartDefinition': 'sit' },
+                        { 'number': 4, 'assetPartDefinition': 'sit' },
+                        { 'number': 5, 'assetPartDefinition': 'sit' },
+                        { 'number': 6, 'assetPartDefinition': 'sit' },
+                        { 'number': 7, 'assetPartDefinition': 'sit' }
+                    ]
+                },
+                {
+                    'setType': 'rs',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'sit' },
+                        { 'number': 1, 'assetPartDefinition': 'sit' },
+                        { 'number': 2, 'assetPartDefinition': 'sit' },
+                        { 'number': 3, 'assetPartDefinition': 'sit' },
+                        { 'number': 4, 'assetPartDefinition': 'sit' },
+                        { 'number': 5, 'assetPartDefinition': 'sit' },
+                        { 'number': 6, 'assetPartDefinition': 'sit' },
+                        { 'number': 7, 'assetPartDefinition': 'sit' }
+                    ]
+                },
+                {
+                    'setType': 'ha',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'sit' },
+                        { 'number': 1, 'assetPartDefinition': 'sit' },
+                        { 'number': 2, 'assetPartDefinition': 'sit' },
+                        { 'number': 3, 'assetPartDefinition': 'sit' },
+                        { 'number': 4, 'assetPartDefinition': 'sit' },
+                        { 'number': 5, 'assetPartDefinition': 'sit' },
+                        { 'number': 6, 'assetPartDefinition': 'sit' },
+                        { 'number': 7, 'assetPartDefinition': 'sit' }
+                    ]
+                },
+                {
+                    'setType': 'he',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'sit' },
                         { 'number': 1, 'assetPartDefinition': 'sit' },
@@ -418,19 +431,6 @@ export const HabboAvatarAnimations = {
                 {
                     'setType': 'wa',
                     'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' },
-                        { 'number': 1, 'assetPartDefinition': 'std' },
-                        { 'number': 2, 'assetPartDefinition': 'std' },
-                        { 'number': 3, 'assetPartDefinition': 'std' },
-                        { 'number': 4, 'assetPartDefinition': 'std' },
-                        { 'number': 5, 'assetPartDefinition': 'std' },
-                        { 'number': 6, 'assetPartDefinition': 'std' },
-                        { 'number': 7, 'assetPartDefinition': 'std' }
-                    ]
-                },
-                {
-                    'setType': 'pt',
-                    'frames': [
                         { 'number': 0, 'assetPartDefinition': 'sit' },
                         { 'number': 1, 'assetPartDefinition': 'sit' },
                         { 'number': 2, 'assetPartDefinition': 'sit' },
@@ -442,7 +442,7 @@ export const HabboAvatarAnimations = {
                     ]
                 },
                 {
-                    'setType': 'ptl',
+                    'setType': 'pt',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'sit' },
                         { 'number': 1, 'assetPartDefinition': 'sit' },
@@ -468,33 +468,7 @@ export const HabboAvatarAnimations = {
                     ]
                 },
                 {
-                    'setType': 'mc',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'sit' },
-                        { 'number': 1, 'assetPartDefinition': 'sit' },
-                        { 'number': 2, 'assetPartDefinition': 'sit' },
-                        { 'number': 3, 'assetPartDefinition': 'sit' },
-                        { 'number': 4, 'assetPartDefinition': 'sit' },
-                        { 'number': 5, 'assetPartDefinition': 'sit' },
-                        { 'number': 6, 'assetPartDefinition': 'sit' },
-                        { 'number': 7, 'assetPartDefinition': 'sit' }
-                    ]
-                },
-                {
-                    'setType': 'mcl',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'sit' },
-                        { 'number': 1, 'assetPartDefinition': 'sit' },
-                        { 'number': 2, 'assetPartDefinition': 'sit' },
-                        { 'number': 3, 'assetPartDefinition': 'sit' },
-                        { 'number': 4, 'assetPartDefinition': 'sit' },
-                        { 'number': 5, 'assetPartDefinition': 'sit' },
-                        { 'number': 6, 'assetPartDefinition': 'sit' },
-                        { 'number': 7, 'assetPartDefinition': 'sit' }
-                    ]
-                },
-                {
-                    'setType': 'mcr',
+                    'setType': 'ptl',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'sit' },
                         { 'number': 1, 'assetPartDefinition': 'sit' },
@@ -727,326 +701,77 @@ export const HabboAvatarAnimations = {
                 {
                     'setType': 'bd',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'bds',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'ss',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'lg',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'sh',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'lh',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'lhs',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'ls',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
                     ]
                 },
                 {
                     'setType': 'lc',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'rh',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'rhs',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'rs',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'rc',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'ch',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wlk'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wlk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'pt',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'wlk' },
-                        { 'number': 1, 'assetPartDefinition': 'wlk' },
-                        { 'number': 2, 'assetPartDefinition': 'wlk' },
-                        { 'number': 3, 'assetPartDefinition': 'wlk' }
-                    ]
-                },
-                {
-                    'setType': 'ptl',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'wlk' },
-                        { 'number': 1, 'assetPartDefinition': 'wlk' },
-                        { 'number': 2, 'assetPartDefinition': 'wlk' },
-                        { 'number': 3, 'assetPartDefinition': 'wlk' }
-                    ]
-                },
-                {
-                    'setType': 'ptr',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'wlk' },
-                        { 'number': 1, 'assetPartDefinition': 'wlk' },
-                        { 'number': 2, 'assetPartDefinition': 'wlk' },
-                        { 'number': 3, 'assetPartDefinition': 'wlk' }
-                    ]
-                },
-                {
-                    'setType': 'mc',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'wlk' },
                         { 'number': 1, 'assetPartDefinition': 'wlk' },
@@ -1064,7 +789,187 @@ export const HabboAvatarAnimations = {
                     ]
                 },
                 {
+                    'setType': 'rh',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'rhs',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'rs',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'rc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
                     'setType': 'mcr',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'ch',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'cc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'ha',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'he',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'ca',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'wa',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'hr',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'hrb',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'ea',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'fa',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'pt',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'ptr',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'ptl',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'mc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'mco',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wlk' },
+                        { 'number': 1, 'assetPartDefinition': 'wlk' },
+                        { 'number': 2, 'assetPartDefinition': 'wlk' },
+                        { 'number': 3, 'assetPartDefinition': 'wlk' }
+                    ]
+                },
+                {
+                    'setType': 'mcu',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'wlk' },
                         { 'number': 1, 'assetPartDefinition': 'wlk' },
@@ -1080,99 +985,26 @@ export const HabboAvatarAnimations = {
                 {
                     'setType': 'lh',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wav'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' }
                     ]
                 },
                 {
                     'setType': 'lhs',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wav'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' }
                     ]
                 },
                 {
                     'setType': 'ls',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wav'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' }
                     ]
                 },
                 {
                     'setType': 'lc',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wav'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'ch',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 2,
-                            'assetPartDefinition': 'wav'
-                        },
-                        {
-                            'number': 3,
-                            'assetPartDefinition': 'wav'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'pt',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'wav' },
-                        { 'number': 1, 'assetPartDefinition': 'wav' }
-                    ]
-                },
-                {
-                    'setType': 'ptl',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'wav' },
-                        { 'number': 1, 'assetPartDefinition': 'wav' }
-                    ]
-                },
-                {
-                    'setType': 'ptr',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'wav' },
-                        { 'number': 1, 'assetPartDefinition': 'wav' }
-                    ]
-                },
-                {
-                    'setType': 'mc',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'wav' },
                         { 'number': 1, 'assetPartDefinition': 'wav' }
@@ -1186,7 +1018,37 @@ export const HabboAvatarAnimations = {
                     ]
                 },
                 {
-                    'setType': 'mcr',
+                    'setType': 'ch',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' },
+                        { 'number': 2, 'assetPartDefinition': 'wav' },
+                        { 'number': 3, 'assetPartDefinition': 'wav' }
+                    ]
+                },
+                {
+                    'setType': 'pt',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' }
+                    ]
+                },
+                {
+                    'setType': 'ptr',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' }
+                    ]
+                },
+                {
+                    'setType': 'ptl',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wav' },
+                        { 'number': 1, 'assetPartDefinition': 'wav' }
+                    ]
+                },
+                {
+                    'setType': 'mc',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'wav' },
                         { 'number': 1, 'assetPartDefinition': 'wav' }
@@ -1244,37 +1106,31 @@ export const HabboAvatarAnimations = {
                 {
                     'setType': 'lh',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'sig'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'sig' }
                     ]
                 },
                 {
                     'setType': 'li',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'sig'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'sig' }
                     ]
                 },
                 {
                     'setType': 'ls',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wav' }
                     ]
                 },
                 {
                     'setType': 'lc',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'wav'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'wav' }
+                    ]
+                },
+                {
+                    'setType': 'mcl',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'wav' }
                     ]
                 }
             ]
@@ -1335,109 +1191,46 @@ export const HabboAvatarAnimations = {
                 {
                     'setType': 'rh',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'blw',
-                            'repeats': 10
-                        },
-                        {
-                            'number': 1,
-                            'assetPartDefinition': 'blw',
-                            'repeats': 10
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'blw', 'repeats': 10 },
+                        { 'number': 1, 'assetPartDefinition': 'blw', 'repeats': 10 }
                     ]
                 },
                 {
                     'setType': 'rs',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'drk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'drk' }
                     ]
                 },
                 {
                     'setType': 'rc',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'drk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'ri',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': ''
-                        }
-                    ]
-                },
-                {
-                    'setType': 'ey',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'std',
-                            'repeats': 10
-                        },
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'eyb',
-                            'repeats': 10
-                        }
-                    ]
-                },
-                {
-                    'setType': 'fc',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'std',
-                            'repeats': 10
-                        },
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'blw',
-                            'repeats': 10
-                        }
-                    ]
-                },
-                {
-                    'setType': 'pt',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' }
-                    ]
-                },
-                {
-                    'setType': 'ptl',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' }
-                    ]
-                },
-                {
-                    'setType': 'ptr',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' }
-                    ]
-                },
-                {
-                    'setType': 'mc',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' }
-                    ]
-                },
-                {
-                    'setType': 'mcl',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' }
+                        { 'number': 0, 'assetPartDefinition': 'drk' }
                     ]
                 },
                 {
                     'setType': 'mcr',
                     'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'std' }
+                        { 'number': 0, 'assetPartDefinition': 'drk' }
+                    ]
+                },
+                {
+                    'setType': 'ri',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': '' }
+                    ]
+                },
+                {
+                    'setType': 'ey',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std', 'repeats': 10 },
+                        { 'number': 0, 'assetPartDefinition': 'eyb', 'repeats': 10 }
+                    ]
+                },
+                {
+                    'setType': 'fc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std', 'repeats': 10 },
+                        { 'number': 0, 'assetPartDefinition': 'blw', 'repeats': 10 }
                     ]
                 }
             ]
@@ -1448,84 +1241,17 @@ export const HabboAvatarAnimations = {
                 {
                     'setType': 'rh',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'blw'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'blw' }
                     ]
                 },
                 {
                     'setType': 'rs',
                     'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'drk'
-                        }
+                        { 'number': 0, 'assetPartDefinition': 'drk' }
                     ]
                 },
                 {
                     'setType': 'rc',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'drk'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'ri',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': ''
-                        }
-                    ]
-                },
-                {
-                    'setType': 'ey',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'std',
-                            'repeats': 2
-                        }
-                    ]
-                },
-                {
-                    'setType': 'fc',
-                    'frames': [
-                        {
-                            'number': 0,
-                            'assetPartDefinition': 'sml'
-                        }
-                    ]
-                },
-                {
-                    'setType': 'pt',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'drk' }
-                    ]
-                },
-                {
-                    'setType': 'ptl',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'drk' }
-                    ]
-                },
-                {
-                    'setType': 'ptr',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'drk' }
-                    ]
-                },
-                {
-                    'setType': 'mc',
-                    'frames': [
-                        { 'number': 0, 'assetPartDefinition': 'drk' }
-                    ]
-                },
-                {
-                    'setType': 'mcl',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'drk' }
                     ]
@@ -1534,6 +1260,24 @@ export const HabboAvatarAnimations = {
                     'setType': 'mcr',
                     'frames': [
                         { 'number': 0, 'assetPartDefinition': 'drk' }
+                    ]
+                },
+                {
+                    'setType': 'ri',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': '' }
+                    ]
+                },
+                {
+                    'setType': 'ey',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std', 'repeats': 2 }
+                    ]
+                },
+                {
+                    'setType': 'fc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'sml' }
                     ]
                 }
             ],
@@ -1990,5 +1734,205 @@ export const HabboAvatarAnimations = {
                 ]
             }]
         },
+        {
+            'id': 'Sleep',
+            'parts': [
+                {
+                    'setType': 'ch',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'cc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'mc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'ls',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'lc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'mcl',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'rs',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'rc',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'mcr',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'ha',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'he',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'wa',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'pt',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'ptr',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                },
+                {
+                    'setType': 'ptl',
+                    'frames': [
+                        { 'number': 0, 'assetPartDefinition': 'std' },
+                        { 'number': 1, 'assetPartDefinition': 'std' },
+                        { 'number': 2, 'assetPartDefinition': 'std' },
+                        { 'number': 3, 'assetPartDefinition': 'std' },
+                        { 'number': 4, 'assetPartDefinition': 'std' },
+                        { 'number': 5, 'assetPartDefinition': 'std' },
+                        { 'number': 6, 'assetPartDefinition': 'std' },
+                        { 'number': 7, 'assetPartDefinition': 'std' }
+                    ]
+                }
+            ]
+        }
     ]
 };
