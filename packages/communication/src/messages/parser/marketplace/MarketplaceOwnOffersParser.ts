@@ -1,4 +1,5 @@
 import { IMessageDataWrapper, IMessageParser, IObjectData, LegacyDataType, ObjectDataFactory } from '@volt/api';
+import { DailyTaskData } from '../quest';
 import { MarketplaceOffer } from './MarketplaceOffer';
 
 export class MarketplaceOwnOffersParser implements IMessageParser
@@ -55,9 +56,11 @@ export class MarketplaceOwnOffersParser implements IMessageParser
             }
 
             const price = wrapper.readInt();
-            const local9 = wrapper.readInt();
-            const local10 = wrapper.readInt();
-            const local13 = new MarketplaceOffer(offerId, furniId, furniType, extraData, stuffData, price, status, local9, local10);
+            const timeLeftMinutes = wrapper.readInt();
+            const averagePrice = wrapper.readInt();
+            // The sold or expired time is sent only for status 2 (sold) and 3 (expired).
+            const statusTime = (status === 2 || status === 3) ? DailyTaskData.readLong(wrapper) : 0;
+            const local13 = new MarketplaceOffer(offerId, furniId, furniType, extraData, stuffData, price, status, timeLeftMinutes, averagePrice, -1, statusTime);
 
             if(i < MarketplaceOwnOffersParser.MAX_LIST_LENGTH)
             {

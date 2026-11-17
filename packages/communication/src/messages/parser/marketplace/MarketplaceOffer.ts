@@ -12,8 +12,9 @@ export class MarketplaceOffer
     private readonly _timeLeftMinutes: number = -1;
     private readonly _averagePrice: number;
     private readonly _offerCount: number;
+    private readonly _statusTime: number;
 
-    constructor(offerId: number, furniId: number, furniType: number, extraData: string, stuffData: IObjectData, price: number, status: number, timeLeftMinutes: number, averagePrice: number, offerCount: number = -1)
+    constructor(offerId: number, furniId: number, furniType: number, extraData: string, stuffData: IObjectData, price: number, status: number, timeLeftMinutes: number, averagePrice: number, offerCount: number = -1, statusTime: number = 0)
     {
         this._offerId = offerId;
         this._furniId = furniId;
@@ -25,6 +26,7 @@ export class MarketplaceOffer
         this._timeLeftMinutes = timeLeftMinutes;
         this._averagePrice = averagePrice;
         this._offerCount = offerCount;
+        this._statusTime = statusTime;
     }
 
     public get offerId(): number
@@ -75,6 +77,12 @@ export class MarketplaceOffer
     public get offerCount(): number
     {
         return this._offerCount;
+    }
+
+    /** When a sold offer was sold or an expired offer expired, in milliseconds since the epoch; 0 when unknown. */
+    public get statusTime(): number
+    {
+        return this._statusTime;
     }
 
     public get isUniqueLimitedItem(): boolean
