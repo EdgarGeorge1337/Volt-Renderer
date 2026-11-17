@@ -627,7 +627,7 @@ export class IncomingHeader
     // October AIR furniture recolor update (package_71.class_4153), official id.
     public static FURNI_RECOLOR_UPDATE = 2810;
     public static ITEM_REMOVE_MULTIPLE = 3821;
-    public static FURNI_LIST_REMOVE_MULTIPLE = 65487;
+    public static FURNI_LIST_REMOVE_MULTIPLE = 1778;
     public static OBJECT_REMOVE_CONFIRM = 3555;
     public static ITEMS_STATE_UPDATE = 2790;
     // AIR 13 room flags and room-wide events.
