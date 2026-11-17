@@ -14294,7 +14294,7 @@
     {
       "name": "UNIT_NUMBER",
       "direction": "server_to_client",
-      "header": 65497,
+      "header": 1727,
       "java": {
         "symbol": "FreezeLivesComposer",
         "className": "FreezeLivesComposer",
