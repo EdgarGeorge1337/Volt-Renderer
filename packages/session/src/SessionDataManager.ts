@@ -1,5 +1,5 @@
 import { IClientAccessListsSnapshot, IFurnitureData, IGroupInformationManager, IMessageComposer, IMessageEvent, IProductData, ISessionDataManager, IUserDataSnapshot, NoobnessLevelEnum, SecurityLevel } from '@volt/api';
-import { AllowedChatStylesMessageEvent, CreatableRoomModelsMessageEvent, AccountSafetyLockStatusChangeMessageEvent, AccountSafetyLockStatusChangeParser, AvailabilityStatusMessageEvent, PetRespectFailedEvent, ReplenishRespectComposer, UpdateUIFlagsComposer, ChangeUserNameResultMessageEvent, EmailStatusResultEvent, FigureUpdateEvent, GetCommunication, GetUserTagsComposer, InClientLinkEvent, MysteryBoxKeysEvent, NoobnessLevelMessageEvent, PetRespectComposer, PetScratchFailedMessageEvent, RoomReadyMessageEvent, RoomUnitChatComposer, UserInfoEvent, UserNameChangeMessageEvent, UserPermissionsEvent, UserRespectComposer, UserTagsMessageEvent } from '@volt/communication';
+import { AllowedChatStylesMessageEvent, ChatStyleNotificationMessageEvent, CreatableRoomModelsMessageEvent, PurchasableChatStylesMessageEvent, AccountSafetyLockStatusChangeMessageEvent, AccountSafetyLockStatusChangeParser, AvailabilityStatusMessageEvent, PetRespectFailedEvent, ReplenishRespectComposer, UpdateUIFlagsComposer, ChangeUserNameResultMessageEvent, EmailStatusResultEvent, FigureUpdateEvent, GetCommunication, GetUserTagsComposer, InClientLinkEvent, MysteryBoxKeysEvent, NoobnessLevelMessageEvent, PetRespectComposer, PetScratchFailedMessageEvent, RoomReadyMessageEvent, RoomUnitChatComposer, UserInfoEvent, UserNameChangeMessageEvent, UserPermissionsEvent, UserRespectComposer, UserTagsMessageEvent } from '@volt/communication';
 import { GetConfiguration } from '@volt/configuration';
 import { GetLocalizationManager } from '@volt/localization';
 import { GetEventDispatcher, MysteryBoxKeysUpdateEvent, VoltEvent, VoltEventType, VoltSettingsEvent, SessionDataPreferencesEvent, UserNameUpdateEvent } from '@volt/events';
@@ -62,7 +62,7 @@ export class SessionDataManager implements ISessionDataManager
 
     private _userDataSnapshot: Readonly<IUserDataSnapshot> | null = null;
 
-    private _clientAccessLists: IClientAccessListsSnapshot = Object.freeze({ chatStyleIds: Object.freeze<number[]>([]), roomModels: Object.freeze([]) });
+    private _clientAccessLists: IClientAccessListsSnapshot = Object.freeze({ chatStyleIds: Object.freeze<number[]>([]), purchasableChatStyleIds: Object.freeze<number[]>([]), roomModels: Object.freeze([]) });
 
     private _permissions: Map<string, number> = new Map();
     private _permissionsSnapshot: ReadonlyMap<string, number> | null = null;
@@ -177,6 +177,8 @@ export class SessionDataManager implements ISessionDataManager
                 this._clientAccessLists = Object.freeze({ ...this._clientAccessLists, chatStyleIds: Object.freeze([...event.getParser().chatStyleIds]) });
                 GetEventDispatcher().dispatchEvent(new VoltEvent(VoltEventType.CLIENT_ACCESS_LISTS_UPDATED));
             })),
+            GetCommunication().registerMessageEvent(new PurchasableChatStylesMessageEvent(this.onPurchasableChatStyles.bind(this))),
+            GetCommunication().registerMessageEvent(new ChatStyleNotificationMessageEvent(this.onPurchasableChatStyleChanged.bind(this))),
             GetCommunication().registerMessageEvent(new CreatableRoomModelsMessageEvent((event: CreatableRoomModelsMessageEvent) =>
             {
                 this._clientAccessLists = Object.freeze({ ...this._clientAccessLists, roomModels: Object.freeze(event.getParser().models.map(model => Object.freeze({ ...model }))) });
@@ -234,6 +236,36 @@ export class SessionDataManager implements ISessionDataManager
             GetEventDispatcher().removeEventListener(VoltSettingsEvent.SETTINGS_UPDATED, this._settingsEventCallback);
             this._settingsEventCallback = null;
         }
+    }
+
+    // SessionDataManager.onPurchasableChatStyles (AIR SessionDataManager.as:483): the owned list replaces the old one.
+    private onPurchasableChatStyles(event: PurchasableChatStylesMessageEvent): void
+    {
+        this.setPurchasableChatStyleIds([...event.getParser().chatStyleIds]);
+    }
+
+    // SessionDataManager.onPurchasableChatStyleChanged (AIR SessionDataManager.as:493): add or remove one style.
+    private onPurchasableChatStyleChanged(event: ChatStyleNotificationMessageEvent): void
+    {
+        const { added, styleId } = event.getParser();
+        const owned = this._clientAccessLists.purchasableChatStyleIds.filter(id => id !== styleId);
+
+        if(added) owned.push(styleId);
+
+        this.setPurchasableChatStyleIds(owned);
+    }
+
+    private setPurchasableChatStyleIds(styleIds: number[]): void
+    {
+        this._clientAccessLists = Object.freeze({ ...this._clientAccessLists, purchasableChatStyleIds: Object.freeze(styleIds) });
+
+        GetEventDispatcher().dispatchEvent(new VoltEvent(VoltEventType.CLIENT_ACCESS_LISTS_UPDATED));
+    }
+
+    /** AIR SessionDataManager.hasPurchasableChatStyle (as:1335). */
+    public hasPurchasableChatStyle(styleId: number): boolean
+    {
+        return this._clientAccessLists.purchasableChatStyleIds.includes(styleId);
     }
 
     private resetUserInfo(): void

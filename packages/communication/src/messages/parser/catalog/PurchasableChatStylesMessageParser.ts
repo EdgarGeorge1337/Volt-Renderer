@@ -1,7 +1,7 @@
 import { IMessageDataWrapper, IMessageParser } from '@volt/api';
 
 /**
- * Official AIR 13 event 946 (`SessionDataManager.onPurchasableChatStyles`): every chat
+ * AIR 38 event 470 (`SessionDataManager.onPurchasableChatStyles`): every chat
  * bubble style this account bought. The chat-style selector adds these on top of the
  * styles the client already offers from `chat.styles`
  * (`RoomChatInputView` -> `hasPurchasableChatStyle`).

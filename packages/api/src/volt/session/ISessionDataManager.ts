@@ -28,6 +28,7 @@ export interface ISessionDataManager
     getGroupBadgeImage(name: string): Texture;
     loadGroupBadgeImage(name: string): string;
     hasSecurity(level: number): boolean;
+    hasPurchasableChatStyle(styleId: number): boolean;
     giveRespect(userId: number): void;
     givePetRespect(petId: number): void;
     sendSpecialCommandMessage(text: string, styleId?: number): void;

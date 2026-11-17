@@ -385,9 +385,9 @@ export class IncomingHeader
     // AIR 13 catalog: 933 LtdRaffleEntered, 2316 LtdRaffleResult.
     public static CATALOG_LTD_RAFFLE_ENTERED = 661;
     public static CATALOG_LTD_RAFFLE_RESULT = 2340;
-    // AIR 13 purchasable chat bubble styles: 946 the owned list, 2580 one style added/removed.
-    public static PURCHASABLE_CHAT_STYLES = 65382;
-    public static CHAT_STYLE_NOTIFICATION = 65494;
+    // AIR 38 purchasable chat bubble styles: 470 the owned list, 916 one style added/removed.
+    public static PURCHASABLE_CHAT_STYLES = 470;
+    public static CHAT_STYLE_NOTIFICATION = 916;
     // AIR 13 help: 2981 the reports this player filed (MyReportStatus window).
     public static MY_REPORTS_STATUS = 65484;
     public static CATALOG_RECEIVE_PET_BREEDS = 1663;
