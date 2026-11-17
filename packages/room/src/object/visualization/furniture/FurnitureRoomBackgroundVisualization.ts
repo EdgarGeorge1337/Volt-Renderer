@@ -5,12 +5,6 @@ import { FurnitureBrandedImageVisualization } from './FurnitureBrandedImageVisua
 
 export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageVisualization
 {
-    // Sort depth of the image: larger is further back. Room planes sit near 2000 (RoomVisualization
-    // ROOM_DEPTH_OFFSET) and furniture, pets and avatars sort below ~150 even in big rooms, so this
-    // band lies between them whatever the tile of the furni. offsetZ moves the image inside the band.
-    private static readonly BACKGROUND_LAYER_DEPTH: number = 1000;
-    private static readonly BACKGROUND_LAYER_DEPTH_RANGE: number = 500;
-
     private _imageOffsets: Map<number, DirectionalOffsetData> = null;
     private _halfSizeImage: Texture = null;
     private _halfSizeImageUrl: string = null;
@@ -21,8 +15,8 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
         if(!texture) return;
 
-        // AIR FurnitureRoomBackgroundVisualization: offsets for the full image and for its size 32 half.
-        this._imageOffsets = new Map([ [ 1, this.createImageOffset(texture.width, texture.height) ], [ 0.5, this.createImageOffset((texture.width / 2), (texture.height / 2)) ] ]);
+        // AIR FurnitureRoomBackgroundVisualization: offsets for the full image at size 64 and its half at size 32.
+        this._imageOffsets = new Map([ [ 64, this.createImageOffset(texture.width, texture.height) ], [ 32, this.createImageOffset((texture.width / 2), (texture.height / 2)) ] ]);
     }
 
     private createImageOffset(width: number, height: number): DirectionalOffsetData
@@ -55,7 +49,7 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
     protected getLayerXOffset(scale: number, direction: number, layerId: number): number
     {
-        const offset = this._imageOffsets?.get(this.getImageFactor(scale))?.getXOffset(direction, 0);
+        const offset = this._imageOffsets?.get(this.getValidSize(scale))?.getXOffset(direction, 0);
 
         if(offset !== undefined) return offset + this.getScaledOffset(this._offsetX, scale);
 
@@ -64,7 +58,7 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
     protected getLayerYOffset(scale: number, direction: number, layerId: number): number
     {
-        const offset = this._imageOffsets?.get(this.getImageFactor(scale))?.getYOffset(direction, 0);
+        const offset = this._imageOffsets?.get(this.getValidSize(scale))?.getYOffset(direction, 0);
 
         if(offset !== undefined) return offset + this.getScaledOffset(this._offsetY, scale);
 
@@ -79,8 +73,6 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
 
         const sprite = this.getSprite(layerId);
 
-        if(sprite) sprite.fixedDepth = this.getBackgroundDepth();
-
         if(!sprite || !sprite.texture || (this.getImageFactor(scale) === 1)) return;
 
         const halfSizeImage = this.getHalfSizeImage(sprite.texture, layerId);
@@ -90,12 +82,10 @@ export class FurnitureRoomBackgroundVisualization extends FurnitureBrandedImageV
         else sprite.scale = (sprite.scale * 0.5);
     }
 
-    private getBackgroundDepth(): number
+    /** AIR: offsetZ moves every layer toward the viewer, sorted with all other room sprites. */
+    protected getLayerZOffset(scale: number, direction: number, layerId: number): number
     {
-        const range = FurnitureRoomBackgroundVisualization.BACKGROUND_LAYER_DEPTH_RANGE;
-        const offsetZ = Math.max(-range, Math.min(range, (this._offsetZ || 0)));
-
-        return (FurnitureRoomBackgroundVisualization.BACKGROUND_LAYER_DEPTH - offsetZ);
+        return (super.getLayerZOffset(scale, direction, layerId) - this._offsetZ);
     }
 
     /** AIR draws the image into a half-size bitmap once; built from the loaded image outside the render path. */
