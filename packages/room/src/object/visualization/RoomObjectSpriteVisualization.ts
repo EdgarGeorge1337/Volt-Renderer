@@ -2,6 +2,7 @@ import { IGraphicAssetCollection, IObjectVisualizationData, IRoomGeometry, IRoom
 import { TextureUtils } from '@volt/utils';
 import { Container, Rectangle, Sprite, Texture } from 'pixi.js';
 import { RoomPlaneDisplay } from '../../renderer/utils/RoomPlaneDisplay';
+import { GetDarknessAlphaTexture } from './DarknessAlphaTexture';
 import { RoomObjectSprite } from './RoomObjectSprite';
 
 export class RoomObjectSpriteVisualization implements IRoomObjectSpriteVisualization
@@ -163,7 +164,7 @@ export class RoomObjectSpriteVisualization implements IRoomObjectSpriteVisualiza
             }
             else if(texture)
             {
-                const sprite = new Sprite(texture);
+                const sprite = new Sprite((objectSprite.blendMode === 'add') ? GetDarknessAlphaTexture(texture) : texture);
 
                 sprite.alpha = (objectSprite.alpha / 255);
                 sprite.tint = objectSprite.color;
