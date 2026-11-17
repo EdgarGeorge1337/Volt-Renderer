@@ -1,6 +1,6 @@
 import { IGraphicAssetCollection, IObjectVisualizationData, IRoomGeometry, IRoomObjectController, IRoomObjectSprite, IRoomObjectSpriteVisualization, RoomObjectSpriteData } from '@volt/api';
 import { TextureUtils } from '@volt/utils';
-import { Container, Point, Rectangle, Sprite, Texture } from 'pixi.js';
+import { Container, Rectangle, Sprite, Texture } from 'pixi.js';
 import { RoomPlaneDisplay } from '../../renderer/utils/RoomPlaneDisplay';
 import { RoomObjectSprite } from './RoomObjectSprite';
 
@@ -195,8 +195,13 @@ export class RoomObjectSpriteVisualization implements IRoomObjectSpriteVisualiza
     public getBoundingRectangle(): Rectangle
     {
         const totalSprites = this.totalSprites;
-        const rectangle = new Rectangle();
 
+        // AIR grows the rectangle by its edges: setting left or top keeps the right and bottom edge, where moving x or y
+        // would shift the whole rectangle. Only sprite 0 starts it, so without that sprite it grows from (0, 0).
+        let left = 0;
+        let top = 0;
+        let right = 0;
+        let bottom = 0;
         let iterator = 0;
 
         while(iterator < totalSprites)
@@ -207,31 +212,30 @@ export class RoomObjectSpriteVisualization implements IRoomObjectSpriteVisualiza
             {
                 const offsetX = ((sprite.flipH) ? (-(sprite.width) + sprite.offsetX) : sprite.offsetX);
                 const offsetY = ((sprite.flipV) ? (-(sprite.height) + sprite.offsetY) : sprite.offsetY);
-                const point = new Point(offsetX, offsetY);
 
                 if(iterator === 0)
                 {
-                    rectangle.x = point.x;
-                    rectangle.y = point.y;
-                    rectangle.width = sprite.width;
-                    rectangle.height = sprite.height;
+                    left = offsetX;
+                    top = offsetY;
+                    right = (offsetX + sprite.width);
+                    bottom = (offsetY + sprite.height);
                 }
                 else
                 {
-                    if(point.x < rectangle.x) rectangle.x = point.x;
+                    if(offsetX < left) left = offsetX;
 
-                    if(point.y < rectangle.y) rectangle.y = point.y;
+                    if(offsetY < top) top = offsetY;
 
-                    if((point.x + sprite.width) > rectangle.right) rectangle.width = ((point.x + sprite.width) - rectangle.x);
+                    if((offsetX + sprite.width) > right) right = (offsetX + sprite.width);
 
-                    if((point.y + sprite.height) > rectangle.bottom) rectangle.height = ((point.y + sprite.height) - rectangle.y);
+                    if((offsetY + sprite.height) > bottom) bottom = (offsetY + sprite.height);
                 }
             }
 
             iterator++;
         }
 
-        return rectangle;
+        return new Rectangle(left, top, (right - left), (bottom - top));
     }
 
     public get instanceId(): number
