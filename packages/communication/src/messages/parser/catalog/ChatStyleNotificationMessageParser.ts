@@ -1,7 +1,7 @@
 import { IMessageDataWrapper, IMessageParser } from '@volt/api';
 
 /**
- * Official AIR 13 event 2580 (`SessionDataManager.onPurchasableChatStyleChanged`): one
+ * AIR 38 event 916 (`SessionDataManager.onPurchasableChatStyleChanged`): one
  * purchasable chat bubble style was added to (or taken away from) this account, so the
  * selector updates without asking for the whole list again.
  */
