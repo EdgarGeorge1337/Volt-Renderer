@@ -269,8 +269,8 @@ export class HabbiconAssetManager
                 const previewHeight = this.normalizeDimension(habbicon.height);
                 const frameData = Array.isArray(habbicon.frameData) ? habbicon.frameData.map(frame => ({
                     id: Number(frame.id) || 0,
-                    x: Number(frame.x) || 0,
-                    y: Number(frame.y) || 0,
+                    x: Number(frame.x) | 0,
+                    y: Number(frame.y) | 0,
                     width: this.normalizeDimension(frame.width, previewWidth),
                     height: this.normalizeDimension(frame.height, previewHeight)
                 })).sort((left, right) => left.id - right.id) : [];
@@ -282,8 +282,8 @@ export class HabbiconAssetManager
                     direction: this.normalizeDirection(habbicon.dir),
                     previewWidth,
                     previewHeight,
-                    x: Number(habbicon.x) || 0,
-                    y: Number(habbicon.y) || 0,
+                    x: Number(habbicon.x) | 0,
+                    y: Number(habbicon.y) | 0,
                     animated: (Number(habbicon.frameCount) > 1) && (frameData.length > 0) && (steps.length > 0),
                     loop: !!habbicon.loop,
                     frameData,
@@ -295,8 +295,8 @@ export class HabbiconAssetManager
             {
                 this._collectionDefinitions.set(Number(icon.id), {
                     id: Number(icon.id),
-                    x: Number(icon.x) || 0,
-                    y: Number(icon.y) || 0,
+                    x: Number(icon.x) | 0,
+                    y: Number(icon.y) | 0,
                     width: this.normalizeDimension(icon.width, 18),
                     height: this.normalizeDimension(icon.height, 18)
                 });
@@ -410,6 +410,10 @@ export class HabbiconAssetManager
     {
         if(!image) return null;
 
+        const sourceY = this.getSheetY(image, x, y, width, height);
+
+        if(sourceY === null) return null;
+
         const canvas = document.createElement('canvas');
 
         canvas.width = Math.max(1, Math.round(width * scale));
@@ -420,9 +424,24 @@ export class HabbiconAssetManager
         if(!context) return null;
 
         context.imageSmoothingEnabled = false;
-        context.drawImage(image, x, y, width, height, 0, 0, canvas.width, canvas.height);
+        context.drawImage(image, x, sourceY, width, height, 0, 0, canvas.width, canvas.height);
 
         return canvas;
+    }
+
+    // Like AIR, y counts from the bottom of the sheet; y from the top is only used when that does not fit.
+    private getSheetY(image: HTMLImageElement, x: number, y: number, width: number, height: number): number | null
+    {
+        const sheetWidth = image.naturalWidth;
+        const sheetHeight = image.naturalHeight;
+        const fits = (top: number) => (x >= 0) && (top >= 0) && ((x + width) <= sheetWidth) && ((top + height) <= sheetHeight);
+        const bottomY = sheetHeight - y - height;
+
+        if(fits(bottomY)) return bottomY;
+
+        if(fits(y)) return y;
+
+        return null;
     }
 
     private scaleCanvas(source: HTMLCanvasElement, scale: number): HTMLCanvasElement
@@ -571,9 +590,9 @@ export class HabbiconAssetManager
         return canvas;
     }
 
-    private normalizeDimension(value: any, fallback: number = HabbiconAssetManager.FRAME_SIZE): number
+    private normalizeDimension(value: unknown, fallback: number = HabbiconAssetManager.FRAME_SIZE): number
     {
-        const parsed = Number(value);
+        const parsed = Number(value) | 0;
 
         return parsed > 0 ? parsed : fallback;
     }
