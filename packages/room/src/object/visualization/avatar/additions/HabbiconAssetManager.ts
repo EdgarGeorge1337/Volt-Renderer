@@ -410,6 +410,10 @@ export class HabbiconAssetManager
     {
         if(!image) return null;
 
+        const sourceY = this.getSheetY(image, x, y, width, height);
+
+        if(sourceY === null) return null;
+
         const canvas = document.createElement('canvas');
 
         canvas.width = Math.max(1, Math.round(width * scale));
@@ -420,9 +424,24 @@ export class HabbiconAssetManager
         if(!context) return null;
 
         context.imageSmoothingEnabled = false;
-        context.drawImage(image, x, y, width, height, 0, 0, canvas.width, canvas.height);
+        context.drawImage(image, x, sourceY, width, height, 0, 0, canvas.width, canvas.height);
 
         return canvas;
+    }
+
+    // Like AIR, y counts from the bottom of the sheet; y from the top is only used when that does not fit.
+    private getSheetY(image: HTMLImageElement, x: number, y: number, width: number, height: number): number | null
+    {
+        const sheetWidth = image.naturalWidth;
+        const sheetHeight = image.naturalHeight;
+        const fits = (top: number) => (x >= 0) && (top >= 0) && ((x + width) <= sheetWidth) && ((top + height) <= sheetHeight);
+        const bottomY = sheetHeight - y - height;
+
+        if(fits(bottomY)) return bottomY;
+
+        if(fits(y)) return y;
+
+        return null;
     }
 
     private scaleCanvas(source: HTMLCanvasElement, scale: number): HTMLCanvasElement
