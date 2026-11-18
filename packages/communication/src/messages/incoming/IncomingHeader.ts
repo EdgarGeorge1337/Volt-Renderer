@@ -262,7 +262,7 @@ export class IncomingHeader
     public static UNIT_HAND_ITEM = 1548;
     public static UNIT_IDLE = 1788;
     public static UNIT_INFO = 3470;
-    public static UNIT_NUMBER = 65497;
+    public static UNIT_NUMBER = 1727;
     public static UNIT_REMOVE = 2675;
     public static UNIT_STATUS = 996;
     public static UNIT_TYPING = 3738;
