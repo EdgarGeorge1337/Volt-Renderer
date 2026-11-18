@@ -29,6 +29,7 @@ export class AvatarVisualization extends RoomObjectSpriteVisualization implement
     private static HALF_SIZE_EFFECT_TEXTURES: HalfSizeTextureCache = new HalfSizeTextureCache(512);
     private static SHADOW_LAYER_ID: number = 1;
     private static SNOWBOARDING_EFFECT: number = 97;
+    private static FREEZE_EFFECT: number = 218;
     private static INITIAL_RESERVED_SPRITES: number = 2;
     private static ANIMATION_FRAME_UPDATE_INTERVAL: number = 2;
     private static DEFAULT_CANVAS_OFFSETS: number[] = [0, 0, 0];
@@ -1322,7 +1323,7 @@ export class AvatarVisualization extends RoomObjectSpriteVisualization implement
 
         let hasShadow = (((this._posture === 'mv') || (this._posture === 'std')) || ((this._posture === 'sit') && this._canStandUp));
 
-        if(this._effect === AvatarVisualization.SNOWBOARDING_EFFECT) hasShadow = false;
+        if((this._effect === AvatarVisualization.SNOWBOARDING_EFFECT) || (this._effect === AvatarVisualization.FREEZE_EFFECT)) hasShadow = false;
 
         if(hasShadow)
         {
