@@ -1,7 +1,7 @@
 import { IMessageDataWrapper, IMessageParser } from '@volt/api';
 
 /**
- * Official `class_3613` (`FurniListRemoveMultiple`, 2813): `int count [ int
+ * Official `class_3337` (`FurniListRemoveMultiple`, 1778): `int count [ int
  * stripId ]`. `HabboInventory.onFurniListRemoveMultiple` drops every strip id
  * from the furni model in one pass instead of one `FurniListRemove` per item.
  */

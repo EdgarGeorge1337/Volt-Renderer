@@ -23970,7 +23970,7 @@
     {
       "name": "FURNI_LIST_REMOVE_MULTIPLE",
       "direction": "server_to_client",
-      "header": 65487,
+      "header": 1778,
       "java": {
         "symbol": "FurniListRemoveMultipleComposer",
         "className": "RemoveHabboItemsComposer",
