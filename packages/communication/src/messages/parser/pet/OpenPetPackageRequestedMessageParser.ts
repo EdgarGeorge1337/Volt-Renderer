@@ -19,9 +19,27 @@ export class OpenPetPackageRequestedMessageParser implements IMessageParser
 
         if(!wrapper.bytesAvailable) return true;
 
-        this._figureData = new PetFigureData(wrapper.readString());
+        this._figureData = new PetFigureData(this.readFigure(wrapper));
 
         return true;
+    }
+
+    // AIR reads the pet as type, palette, colour, breed and counted custom parts, then builds the figure string from them.
+    private readFigure(wrapper: IMessageDataWrapper): string
+    {
+        const typeId = wrapper.readInt();
+        const paletteId = wrapper.readInt();
+        const color = wrapper.readString();
+        wrapper.readInt();
+        const parts: number[] = [];
+        const count = wrapper.readInt();
+
+        for(let i = 0; i < count; i++)
+        {
+            parts.push(wrapper.readInt(), wrapper.readInt(), wrapper.readInt());
+        }
+
+        return [typeId, paletteId, color, count, ...parts].join(' ');
     }
 
     public get objectId(): number
