@@ -7,7 +7,6 @@ export class SellablePetPaletteData
     private _paletteId: number;
     private _sellable: boolean;
     private _rare: boolean;
-    private _clubOnly: boolean;
 
     constructor(wrapper: IMessageDataWrapper)
     {
@@ -24,7 +23,6 @@ export class SellablePetPaletteData
         this._paletteId = -1;
         this._sellable = false;
         this._rare = false;
-        this._clubOnly = false;
 
         return true;
     }
@@ -38,7 +36,6 @@ export class SellablePetPaletteData
         this._paletteId = wrapper.readInt();
         this._sellable = wrapper.readBoolean();
         this._rare = wrapper.readBoolean();
-        this._clubOnly = wrapper.readBoolean();
 
         return true;
     }
@@ -66,10 +63,5 @@ export class SellablePetPaletteData
     public get rare(): boolean
     {
         return this._rare;
-    }
-
-    public get clubOnly(): boolean
-    {
-        return this._clubOnly;
     }
 }
