@@ -16,6 +16,7 @@ export class BadgeImageManager
     private _groupBases: Map<number, string[]> = new Map();
     private _groupSymbols: Map<number, string[]> = new Map();
     private _groupPartColors: Map<number, string> = new Map();
+    private _tintedPartTextures: Map<string, Texture> = new Map();
     private static MAX_GROUP_BADGE_ATTEMPTS: number = 20;
 
     private _requestedBadges: Map<string, boolean> = new Map();
@@ -251,14 +252,9 @@ export class BadgeImageManager
                 const { x, y } = part.calculatePosition(texture);
                 const sprite = new Sprite(texture);
 
+                if(isFirst) this.tintPart(sprite, part.color);
+
                 sprite.position.set(x, y);
-
-                if(isFirst)
-                {
-                    const tintColor = this.getPartTintColor(part.color);
-
-                    if(tintColor !== null) sprite.tint = tintColor;
-                }
 
                 isFirst = false;
                 renderedLayers++;
@@ -322,6 +318,77 @@ export class BadgeImageManager
         const tintColor = parseInt(colorHex, 16);
 
         return Number.isFinite(tintColor) ? tintColor : null;
+    }
+
+    // Habbo's badge imager multiplies each channel as (value * color) >> 8, so full white becomes color - 1.
+    private tintPart(sprite: Sprite, colorId: number): void
+    {
+        const tintColor = this.getPartTintColor(colorId);
+
+        if(tintColor === null) return;
+
+        const texture = sprite.texture;
+
+        const key = `${ texture.uid }:${ tintColor }`;
+        const existing = this._tintedPartTextures.get(key);
+
+        if(existing && !existing.destroyed)
+        {
+            sprite.texture = existing;
+
+            return;
+        }
+
+        const resource = texture.source?.resource as CanvasImageSource;
+
+        // Keep the sprite tint when the source pixels cannot be read.
+        sprite.tint = tintColor;
+
+        if(!resource || (typeof document === 'undefined')) return;
+
+        const frame = texture.frame;
+        const width = Math.max(1, Math.round(frame.width));
+        const height = Math.max(1, Math.round(frame.height));
+        const canvas = document.createElement('canvas');
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const context = canvas.getContext('2d', { willReadFrequently: true });
+
+        let imageData: ImageData = null;
+
+        try
+        {
+            context.drawImage(resource, frame.x, frame.y, width, height, 0, 0, width, height);
+
+            imageData = context.getImageData(0, 0, width, height);
+        }
+        catch
+        {
+            return;
+        }
+
+        const pixels = imageData.data;
+        const red = ((tintColor >> 16) & 0xFF);
+        const green = ((tintColor >> 8) & 0xFF);
+        const blue = (tintColor & 0xFF);
+
+        for(let index = 0; index < pixels.length; index += 4)
+        {
+            pixels[index] = ((pixels[index] * red) >> 8);
+            pixels[index + 1] = ((pixels[index + 1] * green) >> 8);
+            pixels[index + 2] = ((pixels[index + 2] * blue) >> 8);
+        }
+
+        context.putImageData(imageData, 0, 0);
+
+        const result = Texture.from(canvas, true);
+
+        this._tintedPartTextures.set(key, result);
+
+        sprite.texture = result;
+        sprite.tint = 0xFFFFFF;
     }
 
     private onGroupBadgePartsEvent(event: GroupBadgePartsEvent): void
