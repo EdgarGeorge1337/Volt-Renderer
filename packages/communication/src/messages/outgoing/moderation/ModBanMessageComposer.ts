@@ -8,11 +8,8 @@ export class ModBanMessageComposer implements IMessageComposer<ConstructorParame
 
     constructor(userId: number, message: string, categoryId: number, banType: number, permanentBan: boolean, issueId: number = -1)
     {
-        this._data = [userId, message, categoryId, banType, permanentBan];
-        if(issueId != ModBanMessageComposer.NO_ISSUE_ID)
-        {
-            this._data.push(issueId);
-        }
+        // The classic client always writes the issue id as the last field, -1 included.
+        this._data = [userId, message, categoryId, banType, permanentBan, issueId];
     }
 
     public getMessageArray()

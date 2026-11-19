@@ -1,5 +1,4 @@
 import { IMessageComposer } from '@volt/api';
-import { ModBanMessageComposer } from './ModBanMessageComposer';
 
 export class DefaultSanctionMessageComposer implements IMessageComposer<ConstructorParameters<typeof DefaultSanctionMessageComposer>>
 {
@@ -7,11 +6,8 @@ export class DefaultSanctionMessageComposer implements IMessageComposer<Construc
 
     constructor(userId: number, categoryId: number, message: string, issueId: number = -1)
     {
-        this._data = [userId, categoryId, message];
-        if(issueId != ModBanMessageComposer.NO_ISSUE_ID)
-        {
-            this._data.push(issueId);
-        }
+        // The classic client always writes the issue id as the last field, -1 included.
+        this._data = [userId, categoryId, message, issueId];
     }
 
     public getMessageArray()
