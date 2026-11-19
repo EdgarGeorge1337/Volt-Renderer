@@ -250,7 +250,9 @@ export class BadgeImageManager
                 if(!texture) continue;
 
                 const { x, y } = part.calculatePosition(texture);
-                const sprite = new Sprite(isFirst ? this.getTintedPartTexture(texture, part.color) : texture);
+                const sprite = new Sprite(texture);
+
+                if(isFirst) this.tintPart(sprite, part.color);
 
                 sprite.position.set(x, y);
 
@@ -319,20 +321,30 @@ export class BadgeImageManager
     }
 
     // Habbo's badge imager multiplies each channel as (value * color) >> 8, so full white becomes color - 1.
-    private getTintedPartTexture(texture: Texture, colorId: number): Texture
+    private tintPart(sprite: Sprite, colorId: number): void
     {
         const tintColor = this.getPartTintColor(colorId);
 
-        if(tintColor === null) return texture;
+        if(tintColor === null) return;
+
+        const texture = sprite.texture;
 
         const key = `${ texture.uid }:${ tintColor }`;
         const existing = this._tintedPartTextures.get(key);
 
-        if(existing && !existing.destroyed) return existing;
+        if(existing && !existing.destroyed)
+        {
+            sprite.texture = existing;
+
+            return;
+        }
 
         const resource = texture.source?.resource as CanvasImageSource;
 
-        if(!resource || (typeof document === 'undefined')) return texture;
+        // Keep the sprite tint when the source pixels cannot be read.
+        sprite.tint = tintColor;
+
+        if(!resource || (typeof document === 'undefined')) return;
 
         const frame = texture.frame;
         const width = Math.max(1, Math.round(frame.width));
@@ -354,7 +366,7 @@ export class BadgeImageManager
         }
         catch
         {
-            return texture;
+            return;
         }
 
         const pixels = imageData.data;
@@ -375,7 +387,8 @@ export class BadgeImageManager
 
         this._tintedPartTextures.set(key, result);
 
-        return result;
+        sprite.texture = result;
+        sprite.tint = 0xFFFFFF;
     }
 
     private onGroupBadgePartsEvent(event: GroupBadgePartsEvent): void
