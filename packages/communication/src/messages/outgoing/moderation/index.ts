@@ -2,6 +2,7 @@ export * from './CloseIssueDefaultActionMessageComposer';
 export * from './CloseIssuesMessageComposer';
 export * from './DefaultSanctionMessageComposer';
 export * from './GetCfhChatlogMessageComposer';
+export * from './GetCfhSanctionMessageComposer';
 export * from './GetModeratorRoomInfoMessageComposer';
 export * from './GetModeratorUserInfoMessageComposer';
 export * from './GetRoomChatlogMessageComposer';

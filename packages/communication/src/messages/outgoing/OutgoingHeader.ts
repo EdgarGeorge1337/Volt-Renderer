@@ -380,6 +380,7 @@ export class OutgoingHeader
     public static CLOSE_ISSUES = 515;
     public static DEFAULT_SANCTION = 2333;
     public static GET_CFH_CHATLOG = 2328;
+    public static GET_CFH_SANCTION = 275;
     public static MODTOOL_SANCTION = 2184;
     public static PICK_ISSUES = 3277;
     public static RELEASE_ISSUES = 3003;
