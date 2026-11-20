@@ -1,4 +1,5 @@
 import { WiredClearErrorLogsComposer, WiredErrorLogsEvent, WiredGetErrorLogsComposer } from './messages';
+import { BotVoiceLineEvent } from './messages';
 import { WiredContractOpenEvent, WiredContractContentsEvent, WiredContractUpdateResultEvent, GetWiredContractContentsComposer, UpdateWiredContractComposer } from './messages';
 import { BuildersClubFurniCountMessageEvent, BuildersClubPlacementWarningMessageEvent, BuildersClubPlaceRoomItemMessageComposer, BuildersClubPlaceWallItemMessageComposer, BuildersClubSubscriptionStatusMessageEvent } from './messages';
 import { ClaimProductMessageComposer, ClaimProductResultMessageEvent, HasClaimedProductMessageComposer, HasClaimedProductResponseMessageEvent } from './messages';
@@ -625,6 +626,7 @@ export class VoltMessages implements IMessageConfiguration
         this._events.set(IncomingHeader.UNIT_CHAT_SHOUT, RoomUnitChatShoutEvent);
         this._events.set(IncomingHeader.UNIT_CHAT_WHISPER, RoomUnitChatWhisperEvent);
         this._events.set(IncomingHeader.UNIT_TYPING, RoomUnitTypingEvent);
+        this._events.set(IncomingHeader.BOT_VOICE_LINE, BotVoiceLineEvent);
 
         // ROOM EVENTS
         this._events.set(IncomingHeader.WIRED_ACTION, WiredFurniActionEvent);

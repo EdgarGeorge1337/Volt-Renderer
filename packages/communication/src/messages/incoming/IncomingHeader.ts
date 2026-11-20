@@ -369,6 +369,7 @@ export class IncomingHeader
     public static BOT_COMMAND_CONFIGURATION = 1584;
     public static BOT_SKILL_LIST_UPDATE = 2376;
     public static BOT_FORCE_OPEN_CONTEXT_MENU = 2422;
+    public static BOT_VOICE_LINE = 4090;
     public static HAND_ITEM_RECEIVED = 65479;
     public static PET_PLACING_ERROR = 1035;
     public static BOT_ERROR = 189;

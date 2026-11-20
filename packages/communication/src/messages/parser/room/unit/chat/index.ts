@@ -1,3 +1,4 @@
+export * from './BotVoiceLineParser';
 export * from './FloodControlParser';
 export * from './RemainingMuteParser';
 export * from './RoomUnitChatParser';

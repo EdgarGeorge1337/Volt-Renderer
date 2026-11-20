@@ -1,3 +1,4 @@
+export * from './BotVoiceLineEvent';
 export * from './FloodControlEvent';
 export * from './RemainingMuteEvent';
 export * from './RoomUnitChatEvent';
