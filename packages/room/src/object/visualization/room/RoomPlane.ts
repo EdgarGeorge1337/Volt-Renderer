@@ -1235,6 +1235,24 @@ export class RoomPlane implements IRoomPlane
         colorContainer.destroy({ children: true });
     }
 
+    // Floor planes and the wall/landscape plane behind them are meant to share an exact screen-space
+    // edge (a floor tile's far corner is the same world point as the wall's base), but they reach that
+    // point through different Vector3d chains: a floor's location comes from RoomPlaneParser's grid walk,
+    // a wall/landscape's from its corner/normal/direction offset math (addWall). Both resolve to the same
+    // value mathematically, but not always to the same IEEE754 bit pattern, so the raw screenX/screenY can
+    // differ from its neighbour's by noise on the order of 1e-10-1e-6px. Plain Math.round() is fine for
+    // real sub-pixel positions, but when the *intended* coordinate sits on (or near) a half-pixel boundary
+    // - routine for this engine's 45/30 degree isometric projection - that noise is enough to tip one
+    // plane's edge one way and the other plane's matching edge the other way, opening a 1px seam between
+    // them at every zoom level. Snapping to a 1/256px grid first (the same quantum RoomPlaneDisplay's
+    // fragment shader already uses for texel/weight picking, for the identical class of edge-ambiguity)
+    // absorbs that noise - two values that agree to better than 1/256px collapse onto the same grid point
+    // before the integer round, so independently-computed planes land on the same pixel again.
+    private static snapScreenCoordinate(value: number): number
+    {
+        return Math.round(Math.round(value * 256) / 256);
+    }
+
     private updateCorners(geometry: IRoomGeometry): void
     {
         this._cornerA.assign(geometry.getScreenPosition(this._location));
@@ -1244,16 +1262,16 @@ export class RoomPlane implements IRoomPlane
 
         this._offset = geometry.getScreenPoint(this._origin);
 
-        this._cornerA.x = Math.round(this._cornerA.x);
-        this._cornerA.y = Math.round(this._cornerA.y);
-        this._cornerB.x = Math.round(this._cornerB.x);
-        this._cornerB.y = Math.round(this._cornerB.y);
-        this._cornerC.x = Math.round(this._cornerC.x);
-        this._cornerC.y = Math.round(this._cornerC.y);
-        this._cornerD.x = Math.round(this._cornerD.x);
-        this._cornerD.y = Math.round(this._cornerD.y);
-        this._offset.x = Math.round(this._offset.x);
-        this._offset.y = Math.round(this._offset.y);
+        this._cornerA.x = RoomPlane.snapScreenCoordinate(this._cornerA.x);
+        this._cornerA.y = RoomPlane.snapScreenCoordinate(this._cornerA.y);
+        this._cornerB.x = RoomPlane.snapScreenCoordinate(this._cornerB.x);
+        this._cornerB.y = RoomPlane.snapScreenCoordinate(this._cornerB.y);
+        this._cornerC.x = RoomPlane.snapScreenCoordinate(this._cornerC.x);
+        this._cornerC.y = RoomPlane.snapScreenCoordinate(this._cornerC.y);
+        this._cornerD.x = RoomPlane.snapScreenCoordinate(this._cornerD.x);
+        this._cornerD.y = RoomPlane.snapScreenCoordinate(this._cornerD.y);
+        this._offset.x = RoomPlane.snapScreenCoordinate(this._offset.x);
+        this._offset.y = RoomPlane.snapScreenCoordinate(this._offset.y);
 
         const minX = Math.min(this._cornerA.x, this._cornerB.x, this._cornerC.x, this._cornerD.x);
         const maxX = Math.max(this._cornerA.x, this._cornerB.x, this._cornerC.x, this._cornerD.x) - minX;
