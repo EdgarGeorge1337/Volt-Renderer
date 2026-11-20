@@ -52,12 +52,12 @@ export class AvatarRenderManager implements IAvatarRenderManager
         GetEventDispatcher().addEventListener(VoltEventType.AVATAR_ASSET_LOADED, this._aliasResetCallback);
         GetEventDispatcher().addEventListener(VoltEventType.AVATAR_EFFECT_LOADED, this._aliasResetCallback);
 
-        // These populate independent structures; no avatar can be created until init resolves.
+        // No avatar can be created until init resolves. Effect libraries register their animations
+        // as they load, and an animation resolves its actions on registration, so effects wait for them.
         await Promise.all([
-            this.loadActions(),
+            this.loadActions().then(() => this._effectAssetDownloadManager.init()),
             this.loadFigureData(),
-            this._avatarAssetDownloadManager.init(),
-            this._effectAssetDownloadManager.init()
+            this._avatarAssetDownloadManager.init()
         ]);
     }
 
